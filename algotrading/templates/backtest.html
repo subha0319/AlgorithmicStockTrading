@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Backtest Page</title>
+  <style>
+      /* Your CSS styles here */
+      .container { 
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 300px;
+          background-color: rgba(0, 0, 0, 0.3);
+          padding: 20px;
+          border-radius: 10px;
+          text-align: center;
+          box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+      }
+
+      h1 {
+          color: #fff;
+          text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+          letter-spacing: 1px;
+          margin-bottom: 20px;
+      }
+
+      button {
+          width: calc(100% - 20px);
+          margin-bottom: 20px;
+          border: none;
+          outline: none;
+          padding: 10px;
+          font-size: 16px;
+          color: #fff;
+          cursor: pointer;
+          border-radius: 5px;
+          transition: background 0.3s ease;
+      }
+
+      #fetch-btn {
+          background: #4a77d4;
+      }
+
+      #backtest-btn {
+          background: yellow; /* Yellow color */
+      }
+
+      #return-btn {
+          background: #86898e;
+      }
+
+      button:hover {
+          filter: brightness(1.2);
+      }
+  </style>
+</head>
+<body>
+    <div class="container">
+      <h1>Backtest Page</h1>
+      <button id="fetch-btn" onclick="fetchData()">Fetch Data</button>
+      <button id="backtest-btn" onclick="backtest()">Start Backtest</button>
+      <button id="return-btn" onclick="returnToTrade()">Return to Trade</button>
+    </div>
+</body>
+
+<script>
+    function fetchData() {
+        window.location.href = "/fetch_data"; // Redirect to the fetch data page
+    }
+
+    function backtest() {
+        window.location.href = "/start-backtest"; // Redirect to the backtest form page
+    }
+
+    function returnToTrade() {
+        window.location.href = "/trade.html"; // Redirect to the fetch data page
+    }
+</script>
+
+
+</html>

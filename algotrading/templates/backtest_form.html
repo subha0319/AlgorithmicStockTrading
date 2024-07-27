@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Backtest Form</title>
+</head>
+<body>
+    <h2>Backtest Parameters</h2>
+    <form action="/start-backtest" method="post">
+        <label for="start_date">Start Date:</label>
+        <input type="date" id="start_date" name="start_date"><br><br>
+        
+        <label for="end_date">End Date:</label>
+        <input type="date" id="end_date" name="end_date"><br><br>
+
+        <label for="portfolio_value">Portfolio Value:</label>
+        <input type="number" id="portfolio_value" name="portfolio_value"><br><br>
+
+        <input type="submit" value="Start Backtest">
+    </form>
+
+    <script>
+        function backtest() {
+        window.location.href = "/start-backtest"; // Redirect to the backtest form page
+    }
+    </script>
+</body>
+</html>

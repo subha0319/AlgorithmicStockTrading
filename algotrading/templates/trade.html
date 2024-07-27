@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Algo Trading Interface</title>
+  <style>
+      * { 
+          -webkit-box-sizing: border-box; 
+          -moz-box-sizing: border-box; 
+          -ms-box-sizing: border-box; 
+          -o-box-sizing: border-box; 
+          box-sizing: border-box; 
+      }
+
+      body { 
+          width: 100%;
+          height: 100%;
+          font-family: 'Open Sans', sans-serif;
+          background: #092756; /* Fallback color */
+          background: linear-gradient(to bottom, rgba(57, 173, 219, 0.25) 0%, rgba(42, 60, 87, 0.4) 100%), linear-gradient(135deg, #670d10 0%, #092756 100%);
+          margin: 0;
+          padding: 0;
+          overflow: hidden;
+      }
+
+      .container { 
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 300px;
+          background-color: rgba(0, 0, 0, 0.3);
+          padding: 20px;
+          border-radius: 10px;
+          text-align: center;
+          box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+      }
+
+      h1 {
+          color: #fff;
+          text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+          letter-spacing: 1px;
+          margin-bottom: 20px;
+      }
+
+      button {
+          width: calc(100% - 20px);
+          margin-bottom: 20px;
+          border: none;
+          outline: none;
+          padding: 10px;
+          font-size: 16px;
+          color: #0c0c0c;
+          cursor: pointer;
+          border-radius: 5px;
+          transition: background 0.3s ease;
+      }
+
+      #start-btn {
+          background: #2b9139;
+      }
+
+      #stop-btn {
+          background: #ff6347;
+      }
+
+      #backtest-btn {
+          background: yellow;
+      }
+
+      button:hover {
+          filter: brightness(1.2);
+      }
+  </style>
+</head>
+<body>
+    <div class="container">
+      <h1>Algo Trading Interface</h1>
+      <button id="start-btn" onclick="toggleButton()">Start Algo Trading</button>
+      <button id="backtest-btn" onclick="backtest()">Backtest</button>
+      <button id="sign-out-btn" onclick="signOut()">Sign Out</button>
+    </div>
+  
+    <script>
+        var isTrading = false;
+    
+        function toggleButton() {
+            var button = document.getElementById('start-btn');
+            var action = isTrading ? 'stop' : 'start';
+            var url = `/${action}-trading`;
+
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", url, true);
+            xhr.setRequestHeader('Content-Type', 'application/json');
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4) {
+                    if (xhr.status === 200) {
+                        var response = JSON.parse(xhr.responseText);
+                        isTrading = response.is_trading;
+                        updateButtonUI();
+                    } else {
+                        console.error('Failed to start/stop trading');
+                    }
+                }
+            };
+            xhr.send(JSON.stringify({}));
+        }
+
+        function updateButtonUI() {
+            var button = document.getElementById('start-btn');
+            if (isTrading) {
+                button.innerText = 'Stop Algo Trading';
+                button.style.background = '#ff6347';  // Change to red color
+            } else {
+                button.innerText = 'Start Algo Trading';
+                button.style.background = '#2b9139';  // Change to green color
+            }
+        }
+        
+        function backtest() {
+            window.location.href = '/backtest'; // Redirect to backtest page
+        }
+    
+        function signOut() {
+            window.location.href = '/logout'; // Redirect to logout endpoint
+        }
+    
+        // Call updateButtonUI initially to set the button state correctly
+        updateButtonUI();
+    </script>
+    </body>
+  </html>

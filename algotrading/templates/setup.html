@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Setup</title>
+    <style>
+        * { 
+            -webkit-box-sizing: border-box; 
+            -moz-box-sizing: border-box; 
+            -ms-box-sizing: border-box; 
+            -o-box-sizing: border-box; 
+            box-sizing: border-box; 
+        }
+
+        body { 
+            width: 100%;
+            height: 100%;
+            font-family: 'Open Sans', sans-serif;
+            background: linear-gradient(0deg, #272525 0%, #827d7d 100%);
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .container { 
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 300px;
+            background-color: rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            color: #fff;
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+
+        label {
+            color: #fff;
+            font-size: 14px;
+        }
+
+        input {
+            width: calc(100% - 20px);
+            margin-bottom: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            outline: none;
+            padding: 10px;
+            font-size: 14px;
+            color: #fff;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+
+        input:focus {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        input[type="submit"] {
+            width: calc(100% - 20px);
+            background: #4a77d4;
+            border: none;
+            padding: 10px;
+            font-size: 16px;
+            color: #fff;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background: #365899;
+        }
+
+        #instructions-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 5px 10px;
+            background-color: #4a77d4;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #instructions {
+            display: none; /* Initially hidden */
+            color: #fff;
+            text-align: left;
+            max-width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            max-height: 400px; /* Set a maximum height */
+            overflow-y: auto; /* Enable vertical scrolling */
+        }
+
+        #instructions img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Instructions button -->
+    <button id="instructions-button" onclick="toggleInstructions()">Instructions</button>
+
+    <!-- Setup form container -->
+    <div class="container" id="setup-container">
+        <img src="static/assets/logo-color.png" alt="Logo" style="width: 100px; height: auto;">
+        <h1>Setup API Key and API Secret</h1>
+        <p>To get API key, you must login to your kite trade account, open your kite account, and go to your code, where you can see your API key and click Show API key</p>
+        <form action="/setup" method="post">
+            <label for="api_key">API Key:</label><br>
+            <input type="text" id="api_key" name="api_key" required><br>
+            <label for="api_secret">API Secret:</label><br>
+            <input type="text" id="api_secret" name="api_secret" required><br><br>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+
+     <!-- Instructions section (hidden by default) -->
+     <div id="instructions">
+        <h2>Instructions:</h2>
+        <p>To obtain your Zerodha API Key and API Secret:</p>
+        <ol>
+            <li>Log in to your Zerodha Kite account from this link.<a href="https://kite.trade" target="_blank">Kite Trade</a></li>
+            <li><img src="static/assets/kite-login.png" alt="Kite login menu"></li>
+            <li>After logging in, your main page will look like the image below:</li>
+            <li><img src="static/assets/kite-main-page.png" alt="Kite main page"></li>
+            <li>Click on the app you have already created.</li>
+            <li><img src="static/assets/kite-app-top.png" alt="Kite app page 1"></li>
+            <li>Make sure that your app is active, and the subscriptions that this program requires is bought.</li>
+            <li><img src="static/assets/kite-app-bottom.png" alt="Kite app page 2"></li>
+            <li>You can see your API Key and API Secret after you open the app.</li>
+            <li><img src="static/assets/kite-api-secret.png" alt="Kite API secret"></li>
+            <li>Copy them and paste in the setup page.</li>
+            <li>(Note: It is advised not to regenerate API secret unnecessarily)</li>
+        </ol>
+    </div>
+
+    <script>
+        function toggleInstructions() {
+            var instructions = document.getElementById('instructions');
+            var setupContainer = document.getElementById('setup-container');
+            var button = document.getElementById('instructions-button');
+    
+            if (instructions.style.display === 'none') {
+                // Instructions are hidden, show them and hide setup container
+                instructions.style.display = 'block';
+                setupContainer.style.display = 'none';
+                button.textContent = 'Go back to setup';
+            } else {
+                // Instructions are visible, hide them and show setup container
+                instructions.style.display = 'none';
+                setupContainer.style.display = 'block';
+                button.textContent = 'Instructions';
+            }
+        }
+    </script>       
+</body>
+</html>
