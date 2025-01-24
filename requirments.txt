@@ -1,0 +1,5 @@
+kiteconnect==4.0.0  # For the KiteConnect API integration
+pandas==1.5.3       # For data manipulation and handling CSV files
+flask==2.3.2        # For building the web application
+datetime            # Standard library; not needed in requirements.txt
+logging             # Standard library; not needed in requirements.txt
