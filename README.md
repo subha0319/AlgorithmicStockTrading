@@ -91,31 +91,31 @@ To get started with the project, follow these steps:
 
 The Algorithmic Stock Trading project followed a structured SDLC approach, enhanced by the principles of Agile methodology to ensure iterative development, adaptability, and continuous feedback.
 
-### 1. **Planning**
+# 1. **Planning**
 - Defined project objectives: automating trade execution and integrating the Zerodha API.
 - Created a product backlog with prioritized tasks, focusing on features like authentication, data retrieval, and backtesting.
 
-### 2. **Analysis**
+# 2. **Analysis**
 - Analyzed requirements for efficient trade execution and reliable real-time data handling.
 - Collaborated in sprint planning sessions to assess feasibility and identify risks, such as API errors or data inconsistencies.
 
-### 3. **Design**
+# 3. **Design**
 - Designed the architecture for modular implementation, separating concerns like authentication, data fetching, and trading logic.
 - Used iterative design reviews during sprints to refine flowcharts, wireframes, and key components.
 
-### 4. **Implementation**
+# 4. **Implementation**
 - Development was carried out in short sprints, with incremental delivery of features like user authentication (`auth.py`) and data fetching (`historical_data.py`).
 - Regular stand-ups and sprint reviews ensured progress alignment and quick resolution of blockers.
 
-### 5. **Testing**
+# 5. **Testing**
 - Unit tests and integration tests were conducted at the end of each sprint to validate individual components and their interactions.
 - Performed backtests with historical data to validate trading strategies, with results reviewed for refinement in subsequent iterations.
 
-### 6. **Deployment**
+# 6. **Deployment**
 - The application was deployed on a local server for initial testing, with regular feedback from stakeholders to improve usability and performance.
 - Adjustments to trade execution algorithms were incorporated based on live market simulation results.
 
-### 7. **Maintenance**
+# 7. **Maintenance**
 - Agile principles ensured ongoing updates and improvements based on changing market conditions.
 - Regular refactoring sessions and feedback loops helped maintain code quality and compatibility with Zerodha's API updates.
 
