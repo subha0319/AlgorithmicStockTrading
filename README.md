@@ -11,21 +11,24 @@ Welcome to the Algorithmic Stock Trading project! This project involves the desi
 ## Project Structure:
     
     algorithmictrading/
-    ├── app.py                  # Main entry point for the application
-    ├── bscount.csv             # CSV file tracking buy and sell counts
-    ├── data/                   # Directory containing user-related data
+    ├── app.py                   # Main entry point for the application
+    ├── bscount.csv              # CSV file tracking buy and sell counts
+    ├── data/                    # Directory containing user-related data
     │   └── userdata.csv         # User data for API integration
-    ├── modules/                # Contains core Python modules
+    ├── modules/                 # Contains core Python modules
     │   ├── __init__.py          # Initializes the module
     │   ├── auth.py              # Handles user authentication and token validation
     │   ├── historical_data.py   # Fetches historical stock data using the KiteConnect API
-    ├── static/                 # Contains static files like CSS
+    ├── static/                  # Contains static files like CSS
     │   └── styles.css           # Stylesheet for the application
-    ├── templates/              # HTML templates for the web interface
+    ├── templates/               # HTML templates for the web interface
     │   ├── backtest.html        # Backtesting page
     │   ├── fetch_data.html      # Data fetching page
     │   ├── index.html           # Homepage
-    │   └── ...                  # Other HTML pages (login, error, setup, etc.)
+    │   ├── login.html           # Login page
+    │   ├── setup.html           # Setup page
+    │   ├── trade.html           # Trade start page
+    │   └── fetch_data.html      # Page for fetching stock market data
 
 ## Prerequisites
 1. **API Credentials:**
