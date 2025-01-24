@@ -30,10 +30,10 @@ Welcome to the Algorithmic Stock Trading project! This project involves the desi
 ## Prerequisites
 1. **API Credentials:**
 Create a file named userdata.csv in the data/ directory with the following columns:
-api_key
-access_token
-user_id
-public_token
+- api_key
+- access_token
+- user_id
+- public_token
 
 Example of userdata.csv:
 
@@ -41,7 +41,7 @@ Example of userdata.csv:
     your_api_key,your_access_token,your_user_id,your_public_token
 
 
-3. **Database Initialization:**
+2. **Database Initialization:**
 Ensure a file named bscount.csv exists in the project root directory. It should contain the following initial data:
     ```css
     bcount,scount,last_order_price,last_order_placed
