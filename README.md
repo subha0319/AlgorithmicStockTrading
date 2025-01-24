@@ -9,7 +9,7 @@ Welcome to the Algorithmic Stock Trading project! This project involves the desi
 - **Predefined Trading Criteria**: Utilizes specific criteria to guide trading decisions, reducing human error and emotional bias.
 
 ## Project Structure:
-    ```
+    
     algorithmictrading/
     ├── app.py                  # Main entry point for the application
     ├── bscount.csv             # CSV file tracking buy and sell counts
