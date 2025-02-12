@@ -7,6 +7,7 @@ Welcome to the Algorithmic Stock Trading project! This project involves the desi
 - **Automated Trade Execution**: Integrates with the Zerodha API to execute trades automatically based on predefined strategies.
 - **Real-Time Market Data Analysis**: Processes live market data to make informed trading decisions.
 - **Predefined Trading Criteria**: Utilizes specific criteria to guide trading decisions, reducing human error and emotional bias.
+- **Stop Loss**: An important feature to sigificant losses reduce losses.
 
 ## Project Structure:
     
